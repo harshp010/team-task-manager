@@ -44,13 +44,24 @@ Create one Railway project with three services.
 
 1. Add new service from GitHub repo.
 2. Select this repository.
-3. Set Root Directory:
+3. Keep Root Directory empty, or set it to:
 
 ```txt
-/apps/api
+/
 ```
 
-4. Railway will read `apps/api/railway.json` for build and start commands.
+4. Set Build Command:
+
+```txt
+npm run build:api
+```
+
+5. Set Start Command:
+
+```txt
+npm run start:api
+```
+
 5. Add environment variables:
 
 ```txt
@@ -67,13 +78,24 @@ NODE_ENV=production
 ### Web Service
 
 1. Add another service from the same GitHub repo.
-2. Set Root Directory:
+2. Keep Root Directory empty, or set it to:
 
 ```txt
-/apps/web
+/
 ```
 
-3. Railway will read `apps/web/railway.json`.
+3. Set Build Command:
+
+```txt
+npm run build:web
+```
+
+4. Set Start Command:
+
+```txt
+npm run start:web
+```
+
 4. Add environment variable:
 
 ```txt

@@ -13,9 +13,9 @@ Create a Railway service connected to the GitHub repository.
 Settings:
 
 ```txt
-Root Directory: apps/api
-Build Command: npm install && npm run prisma:generate && npm run build
-Start Command: npm run prisma:deploy && npm run start
+Root Directory: leave empty, or use /
+Build Command: npm run build:api
+Start Command: npm run start:api
 ```
 
 Environment variables:
@@ -37,9 +37,9 @@ Create a second Railway service connected to the same repository.
 Settings:
 
 ```txt
-Root Directory: apps/web
-Build Command: npm install && npm run build
-Start Command: npm run start
+Root Directory: leave empty, or use /
+Build Command: npm run build:web
+Start Command: npm run start:web
 ```
 
 Environment variables:
