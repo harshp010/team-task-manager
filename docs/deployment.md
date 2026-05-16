@@ -21,14 +21,17 @@ Start Command: npm run start:api
 Environment variables:
 
 ```txt
-DATABASE_URL=postgresql://...
+DATABASE_URL=postgresql://...  or  ${{Postgres.DATABASE_URL}}
 JWT_SECRET=use-a-long-random-secret
 JWT_EXPIRES_IN=7d
 CLIENT_URL=https://your-web-service.up.railway.app
 COOKIE_DOMAIN=
 NODE_ENV=production
 PORT=4000
+RAILWAY_SERVICE_TARGET=api
 ```
+
+`DATABASE_URL` must be the Railway PostgreSQL connection string. It cannot be the web URL, API URL, service name, or placeholder text. It should start with `postgresql://` or use Railway's variable reference to the PostgreSQL service.
 
 ## 3. Deploy the Web App
 
@@ -46,6 +49,7 @@ Environment variables:
 
 ```txt
 NEXT_PUBLIC_API_URL=https://your-api-service.up.railway.app/api
+RAILWAY_SERVICE_TARGET=web
 ```
 
 ## 4. Final Checks

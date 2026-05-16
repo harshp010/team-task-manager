@@ -65,13 +65,16 @@ npm run start:api
 5. Add environment variables:
 
 ```txt
-DATABASE_URL=<Railway PostgreSQL DATABASE_URL>
+DATABASE_URL=<Railway PostgreSQL DATABASE_URL or ${{Postgres.DATABASE_URL}}>
 JWT_SECRET=<long random secret at least 32 characters>
 JWT_EXPIRES_IN=7d
 CLIENT_URL=<frontend Railway public URL>
 COOKIE_DOMAIN=
 NODE_ENV=production
+RAILWAY_SERVICE_TARGET=api
 ```
+
+The backend `DATABASE_URL` value must start with `postgresql://` or `postgres://`. If Railway lets you add a reference, use the PostgreSQL service variable reference, usually like `${{Postgres.DATABASE_URL}}`.
 
 6. Generate a public domain for the API service.
 
@@ -100,6 +103,7 @@ npm run start:web
 
 ```txt
 NEXT_PUBLIC_API_URL=https://your-api-domain.up.railway.app/api
+RAILWAY_SERVICE_TARGET=web
 ```
 
 5. Generate a public domain for the web service.
